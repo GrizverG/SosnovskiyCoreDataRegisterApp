@@ -14,6 +14,10 @@
 		A979EDEB24BDF43100A0A1AF /* SosnovskiyVTBCoreDataCarStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A979EDE924BDF43100A0A1AF /* SosnovskiyVTBCoreDataCarStorage.xcdatamodeld */; };
 		A979EDED24BDF43500A0A1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A979EDEC24BDF43500A0A1AF /* Assets.xcassets */; };
 		A979EDF024BDF43500A0A1AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A979EDEE24BDF43500A0A1AF /* LaunchScreen.storyboard */; };
+		A979EDFC24BDF99800A0A1AF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EDFB24BDF99800A0A1AF /* ProfileView.swift */; };
+		A979EDFE24BDFA2F00A0A1AF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EDFD24BDFA2F00A0A1AF /* UIViewExtension.swift */; };
+		A979EE0024BDFCB000A0A1AF /* CridentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EDFF24BDFCB000A0A1AF /* CridentialManager.swift */; };
+		A979EE0224BE4AE000A0A1AF /* CarFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EE0124BE4AE000A0A1AF /* CarFactoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		A979EDEC24BDF43500A0A1AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A979EDEF24BDF43500A0A1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A979EDF124BDF43500A0A1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A979EDFB24BDF99800A0A1AF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A979EDFD24BDFA2F00A0A1AF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A979EDFF24BDFCB000A0A1AF /* CridentialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CridentialManager.swift; sourceTree = "<group>"; };
+		A979EE0124BE4AE000A0A1AF /* CarFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFactoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,52 @@
 		A979EDDF24BDF43100A0A1AF /* SosnovskiyVTBCoreDataCarStorage */ = {
 			isa = PBXGroup;
 			children = (
+				A979EDF924BDF8AE00A0A1AF /* Model */,
+				A979EDF824BDF8AB00A0A1AF /* View */,
+				A979EDF724BDF8A600A0A1AF /* Controller */,
 				A979EDE024BDF43100A0A1AF /* AppDelegate.swift */,
 				A979EDE224BDF43100A0A1AF /* SceneDelegate.swift */,
-				A979EDE424BDF43100A0A1AF /* ViewController.swift */,
-				A979EDE624BDF43100A0A1AF /* Main.storyboard */,
+				A979EDFA24BDF92C00A0A1AF /* Storyboards */,
 				A979EDEC24BDF43500A0A1AF /* Assets.xcassets */,
-				A979EDEE24BDF43500A0A1AF /* LaunchScreen.storyboard */,
 				A979EDF124BDF43500A0A1AF /* Info.plist */,
 				A979EDE924BDF43100A0A1AF /* SosnovskiyVTBCoreDataCarStorage.xcdatamodeld */,
 			);
 			path = SosnovskiyVTBCoreDataCarStorage;
+			sourceTree = "<group>";
+		};
+		A979EDF724BDF8A600A0A1AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A979EDE424BDF43100A0A1AF /* ViewController.swift */,
+				A979EDFF24BDFCB000A0A1AF /* CridentialManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A979EDF824BDF8AB00A0A1AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A979EDFB24BDF99800A0A1AF /* ProfileView.swift */,
+				A979EDFD24BDFA2F00A0A1AF /* UIViewExtension.swift */,
+				A979EE0124BE4AE000A0A1AF /* CarFactoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A979EDF924BDF8AE00A0A1AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A979EDFA24BDF92C00A0A1AF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A979EDE624BDF43100A0A1AF /* Main.storyboard */,
+				A979EDEE24BDF43500A0A1AF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A979EE0224BE4AE000A0A1AF /* CarFactoryView.swift in Sources */,
+				A979EDFE24BDFA2F00A0A1AF /* UIViewExtension.swift in Sources */,
+				A979EE0024BDFCB000A0A1AF /* CridentialManager.swift in Sources */,
 				A979EDE524BDF43100A0A1AF /* ViewController.swift in Sources */,
 				A979EDE124BDF43100A0A1AF /* AppDelegate.swift in Sources */,
+				A979EDFC24BDF99800A0A1AF /* ProfileView.swift in Sources */,
 				A979EDEB24BDF43100A0A1AF /* SosnovskiyVTBCoreDataCarStorage.xcdatamodeld in Sources */,
 				A979EDE324BDF43100A0A1AF /* SceneDelegate.swift in Sources */,
 			);
