@@ -24,11 +24,30 @@ final class CarFactoryView: UIView {
     private weak var bodyView: UIView!
     private weak var closeButton: UIView!
     
+    // MARK: - Constants
+    private enum Constant {
+        static let buttonBackgroundColor = UIColor(displayP3Red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
+        static let viewCornerRadius: CGFloat = 20
+        static let viewSpacing = 30
+        static let labelText = "Enter car name:"
+        static let elementHeight = 50
+        static let labelTextSize: CGFloat = 26
+        static let buttonTextSize: CGFloat = 30
+        static let elementCornerRadius: CGFloat = 25
+        static let betweenButtonSpacing = 8
+        static let elementSpacing = 17
+        static let labelHeight = 25
+        static let closeButtonText = "Close"
+        static let addCarButtonText = "Add car"
+        static let buttonFont = UIFont.boldSystemFont(ofSize: Constant.buttonTextSize)
+        static let textContainerFont = UIFont.boldSystemFont(ofSize: Constant.labelTextSize)
+    }
+    
     // MARK: - Delegate
     weak var carDelegate: CarCreatingDelegate?
     
     //
-    // MARK: - carFactoryInit
+    // MARK: - Car factory init
     init() {
         super.init(frame: .zero)
         setupHideButton()
@@ -48,7 +67,7 @@ final class CarFactoryView: UIView {
         let hideButton = UIButton()
         
         addSubview(hideButton)
-        hideButton.backgroundColor = UIColor(displayP3Red: 0.1, green: 0.1, blue: 0.1, alpha: 0.4)
+        hideButton.backgroundColor = Constant.buttonBackgroundColor
         hideButton.translatesAutoresizingMaskIntoConstraints = false
         hideButton.addTarget(self, action: #selector(hideViewAction), for: .touchUpInside)
         
@@ -63,11 +82,11 @@ final class CarFactoryView: UIView {
         addSubview(bodyView)
         bodyView.backgroundColor = .gray
         bodyView.clipsToBounds = true
-        bodyView.layer.cornerRadius = 20
+        bodyView.layer.cornerRadius = Constant.viewCornerRadius
         bodyView.translatesAutoresizingMaskIntoConstraints = false
-        bodyView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        bodyView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        bodyView.addToLeft(anchor: self.leadingAnchor, multiplier: 30)
+        bodyView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        bodyView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        bodyView.addToLeft(anchor: leadingAnchor, multiplier: Constant.viewSpacing)
         self.bodyView = bodyView
     }
     
@@ -76,14 +95,14 @@ final class CarFactoryView: UIView {
         let carNameLabel = UILabel()
         
         self.bodyView.addSubview(carNameLabel)
-        carNameLabel.text = "Enter car name:"
+        carNameLabel.text = Constant.labelText
         carNameLabel.translatesAutoresizingMaskIntoConstraints = false
         carNameLabel.textColor = .white
-        carNameLabel.font = UIFont.boldSystemFont(ofSize: 26)
-        carNameLabel.xAnchor(anchor: self.bodyView.centerXAnchor, multiplier: -15)
-        carNameLabel.addToLeft(anchor: self.bodyView.leadingAnchor, multiplier: 15)
-        carNameLabel.addToTop(anchor: self.bodyView.topAnchor, multiplier: 15)
-        carNameLabel.height(25)
+        carNameLabel.font = Constant.textContainerFont
+        carNameLabel.xAnchor(anchor: bodyView.centerXAnchor, multiplier: -Constant.elementSpacing)
+        carNameLabel.addToLeft(anchor: bodyView.leadingAnchor, multiplier: Constant.elementSpacing)
+        carNameLabel.addToTop(anchor: bodyView.topAnchor, multiplier: Constant.elementSpacing)
+        carNameLabel.height(Constant.labelHeight)
         self.carNameLabel = carNameLabel
     }
     
@@ -95,18 +114,18 @@ final class CarFactoryView: UIView {
         carNameTextField.delegate = self
         carNameTextField.borderStyle = .roundedRect
         carNameTextField.contentVerticalAlignment = .center
-        carNameTextField.font = UIFont.systemFont(ofSize: 15)
+        carNameTextField.font = Constant.textContainerFont
         carNameTextField.returnKeyType = UIReturnKeyType.done
         carNameTextField.keyboardType = UIKeyboardType.default
         carNameTextField.autocorrectionType = UITextAutocorrectionType.no
         carNameTextField.translatesAutoresizingMaskIntoConstraints = false
         carNameTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        carNameTextField.layer.cornerRadius = 25
+        carNameTextField.layer.cornerRadius = Constant.elementCornerRadius
         carNameTextField.clipsToBounds = true
-        carNameTextField.height(50)
-        carNameTextField.addToTop(anchor: self.carNameLabel.bottomAnchor, multiplier: 17)
-        carNameTextField.addToLeft(anchor: self.bodyView.leadingAnchor, multiplier: 15)
-        carNameTextField.addToRight(anchor: self.bodyView.trailingAnchor, multiplier: -15)
+        carNameTextField.height(Constant.elementHeight)
+        carNameTextField.addToTop(anchor: carNameLabel.bottomAnchor, multiplier: Constant.elementSpacing)
+        carNameTextField.addToLeft(anchor: bodyView.leadingAnchor, multiplier: Constant.elementSpacing)
+        carNameTextField.addToRight(anchor: bodyView.trailingAnchor, multiplier: -Constant.elementSpacing)
         self.carNameTextField = carNameTextField
     }
     
@@ -115,18 +134,18 @@ final class CarFactoryView: UIView {
         let closeButton = UIButton()
         
         addSubview(closeButton)
-        closeButton.setTitle("Close", for: .normal)
+        closeButton.setTitle(Constant.closeButtonText, for: .normal)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.addTarget(self, action: #selector(hideViewAction), for: .touchUpInside)
         closeButton.backgroundColor = .orange
-        closeButton.layer.cornerRadius = 25
+        closeButton.layer.cornerRadius = Constant.elementCornerRadius
         closeButton.clipsToBounds = true
-        closeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        closeButton.addToTop(anchor: self.carNameTextField.bottomAnchor, multiplier: 17)
-        closeButton.addToBottom(anchor: self.bodyView.bottomAnchor, multiplier: -17)
-        closeButton.addToLeft(anchor: self.bodyView.leadingAnchor, multiplier: 17)
-        closeButton.addToRight(anchor: self.bodyView.centerXAnchor, multiplier: -8)
-        closeButton.height(50)
+        closeButton.titleLabel?.font = Constant.buttonFont
+        closeButton.addToTop(anchor: self.carNameTextField.bottomAnchor, multiplier: Constant.elementSpacing)
+        closeButton.addToBottom(anchor: bodyView.bottomAnchor, multiplier: -Constant.elementSpacing)
+        closeButton.addToLeft(anchor: bodyView.leadingAnchor, multiplier: Constant.elementSpacing)
+        closeButton.addToRight(anchor: bodyView.centerXAnchor, multiplier: -Constant.betweenButtonSpacing)
+        closeButton.height(Constant.elementHeight)
 
         self.closeButton = closeButton
     }
@@ -135,19 +154,19 @@ final class CarFactoryView: UIView {
     private func setupAddCarButton() {
         let addCarButton = UIButton()
         
-        self.bodyView.addSubview(addCarButton)
-        addCarButton.setTitle("Add car", for: .normal)
+        bodyView.addSubview(addCarButton)
+        addCarButton.setTitle(Constant.addCarButtonText, for: .normal)
         addCarButton.translatesAutoresizingMaskIntoConstraints = false
         addCarButton.addTarget(self, action: #selector(addCarAction), for: .touchUpInside)
         addCarButton.backgroundColor = .orange
-        addCarButton.layer.cornerRadius = 25
+        addCarButton.layer.cornerRadius = Constant.elementCornerRadius
         addCarButton.clipsToBounds = true
-        addCarButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        addCarButton.titleLabel?.font = Constant.buttonFont
         addCarButton.translatesAutoresizingMaskIntoConstraints = false
-        addCarButton.addToBottom(anchor: self.bodyView.bottomAnchor, multiplier: -17)
-        addCarButton.addToRight(anchor: self.bodyView.trailingAnchor, multiplier: -17)
-        addCarButton.leadingAnchor.constraint(equalTo: self.bodyView.centerXAnchor, constant: 8).isActive = true
-        addCarButton.height(50)
+        addCarButton.addToBottom(anchor: bodyView.bottomAnchor, multiplier: -Constant.elementSpacing)
+        addCarButton.addToRight(anchor: bodyView.trailingAnchor, multiplier: -Constant.elementSpacing)
+        addCarButton.addToLeft(anchor: bodyView.centerXAnchor, multiplier: Constant.betweenButtonSpacing)
+        addCarButton.height(Constant.elementHeight)
 
         self.addCarButton = addCarButton
     }
