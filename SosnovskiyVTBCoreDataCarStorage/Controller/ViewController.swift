@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - Properties
-    private var credentialManager = CredentialManager()
+    private var credentialManager = CoreDataManager()
     private var profileView = ProfileView()
     
     // MARK: - View did load
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 extension ViewController: ReloadViewDelegate {
     func resetView() {
         if credentialManager.hasProfile() {
-            profileView.configure(credentialManager.getCredentials())
+            profileView.configure(credentialManager.getPerson())
         } else {
             profileView.configure(nil)
         }

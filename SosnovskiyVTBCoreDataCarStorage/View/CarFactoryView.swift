@@ -9,9 +9,10 @@
 import UIKit
 
 // MARK: - Car creating delegate
-protocol CarCreatingDelegate: CredentialControlDelegate {
-    func passCar(carName: String)
+@objc protocol CarCreatingDelegate: CredentialControlDelegate {
+    func passCar(_ name: String)
 }
+
 // MARK: - Car factory view
 final class CarFactoryView: UIView {
     
@@ -99,7 +100,7 @@ final class CarFactoryView: UIView {
         carNameLabel.translatesAutoresizingMaskIntoConstraints = false
         carNameLabel.textColor = .white
         carNameLabel.font = Constant.textContainerFont
-        carNameLabel.xAnchor(anchor: bodyView.centerXAnchor, multiplier: -Constant.elementSpacing)
+        carNameLabel.centerXAnchor.constraint(equalTo: bodyView.centerXAnchor).isActive = true
         carNameLabel.addToLeft(anchor: bodyView.leadingAnchor, multiplier: Constant.elementSpacing)
         carNameLabel.addToTop(anchor: bodyView.topAnchor, multiplier: Constant.elementSpacing)
         carNameLabel.height(Constant.labelHeight)
@@ -174,14 +175,15 @@ final class CarFactoryView: UIView {
     // MARK: - Hide view action
     @objc private func hideViewAction() {
         self.hideOrShow(nil)
+        carNameTextField.text = ""
     }
     
     // MARK: - Add car action
     @objc private func addCarAction() {
         if let carName = carNameTextField.text {
             if !carName.isEmpty {
-                carDelegate?.passCar(carName: carName)
-                self.hideOrShow(nil)
+                carDelegate?.passCar(carName)
+                hideViewAction()
             }
         }
     }

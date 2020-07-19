@@ -50,10 +50,8 @@ extension UIView {
     func width(_ width: Int) {
         widthAnchor.constraint(equalToConstant: CGFloat(width)).isActive = true
     }
-    func xAnchor(anchor: NSLayoutXAxisAnchor, multiplier: Int) {
-        centerXAnchor.constraint(equalTo: anchor, constant: CGFloat(multiplier))
-    }
     
+    // MARK: - Hide or show
     func hideOrShow(_ button: UIButton?) {
         if isHidden {
             button?.isHidden = false
