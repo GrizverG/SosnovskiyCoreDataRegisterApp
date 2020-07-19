@@ -18,7 +18,7 @@
 		A979EDFE24BDFA2F00A0A1AF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EDFD24BDFA2F00A0A1AF /* UIViewExtension.swift */; };
 		A979EE0024BDFCB000A0A1AF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EDFF24BDFCB000A0A1AF /* CoreDataManager.swift */; };
 		A979EE0224BE4AE000A0A1AF /* CarFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979EE0124BE4AE000A0A1AF /* CarFactoryView.swift */; };
-		A9CF6A6024C498CD004B402D /* carTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CF6A5F24C498CD004B402D /* carTableViewController.swift */; };
+		A9CE218A24C4C48A005C4EB9 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CE218924C4C48A005C4EB9 /* CarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		A979EDFD24BDFA2F00A0A1AF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A979EDFF24BDFCB000A0A1AF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A979EE0124BE4AE000A0A1AF /* CarFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFactoryView.swift; sourceTree = "<group>"; };
-		A9CF6A5F24C498CD004B402D /* carTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carTableViewController.swift; sourceTree = "<group>"; };
+		A9CE218924C4C48A005C4EB9 /* CarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			children = (
 				A979EDE424BDF43100A0A1AF /* ViewController.swift */,
 				A979EDFF24BDFCB000A0A1AF /* CoreDataManager.swift */,
-				A9CF6A5F24C498CD004B402D /* carTableViewController.swift */,
+				A9CE218924C4C48A005C4EB9 /* CarTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,10 +190,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96895C724C379150029B776 /* PersonData.xcdatamodeld in Sources */,
+				A9CE218A24C4C48A005C4EB9 /* CarTableViewController.swift in Sources */,
 				A979EE0224BE4AE000A0A1AF /* CarFactoryView.swift in Sources */,
 				A979EDFE24BDFA2F00A0A1AF /* UIViewExtension.swift in Sources */,
 				A979EE0024BDFCB000A0A1AF /* CoreDataManager.swift in Sources */,
-				A9CF6A6024C498CD004B402D /* carTableViewController.swift in Sources */,
 				A979EDE524BDF43100A0A1AF /* ViewController.swift in Sources */,
 				A979EDE124BDF43100A0A1AF /* AppDelegate.swift in Sources */,
 				A979EDFC24BDF99800A0A1AF /* ProfileView.swift in Sources */,

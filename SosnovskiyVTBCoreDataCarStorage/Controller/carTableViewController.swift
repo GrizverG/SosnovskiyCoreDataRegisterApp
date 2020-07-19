@@ -16,7 +16,7 @@ import Foundation
 }
 
 // MARK: - Car table view controller
-final class carTableViewController: UITableViewController {
+final class CarTableViewController: UITableViewController {
     
     //
     // MARK: - Properties
